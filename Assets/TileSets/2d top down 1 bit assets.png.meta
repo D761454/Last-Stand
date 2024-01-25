@@ -1,0 +1,1121 @@
+fileFormatVersion: 2
+guid: 25492ba1178e52145b5a0aaa6e1b3992
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191dae83248f8b247a17007a587a64ab
+      internalID: 279968033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0882dd676586ce04787c2a8c1059ce20
+      internalID: 340157700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9cc8e5578b7374a9ad50eb917da4aa
+      internalID: -861007742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b81bf230d43a5244ba55fd332df5f88
+      internalID: -819171974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affcaa6f483eeb44eabf4f30920e1ec3
+      internalID: -808928263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a537a9d2d45e594fa26e242272532dc
+      internalID: 166168534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbac85075ca43694081cc157d6e120a0
+      internalID: -1055377444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302afc342d35ce44a8cc02f6b22fedb3
+      internalID: 446151956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f958deea522eca4d8f535b8b30ccfda
+      internalID: -2010458348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00832037bc25da941a2bc7e558179a03
+      internalID: -1905159917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a415834a1a496ec4ca84224237ccb125
+      internalID: 670105308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4d75b78ce25be45837e3be0ade8e87
+      internalID: -146782168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1048
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8644139ea2b0a84594b1de11f914ac2
+      internalID: -1651635614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab54168d2b118de44b8f0e2b23e5356b
+      internalID: 406617814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_14
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4859b20f0b279f4f96dbe449078a553
+      internalID: 688193908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aab16d7a7f075145a61d583eea1f3da
+      internalID: -2095255987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e61956408ef184498b4b194af70770
+      internalID: -1095081124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302ed8fee4deb1c42a858f9cb1d1e893
+      internalID: 836979216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c28b14238dab5d41a920645b64983cc
+      internalID: 193937245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b10813319cab8540b92cc0b44375676
+      internalID: 804349385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7541666663f7c8d4c932afbae8af13e9
+      internalID: 725268463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_21
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1032
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5aaca825438bad4aa6901e15c5c351d
+      internalID: -1153845731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02ab8c1bf3877b4083b8df6a81591c5
+      internalID: 1903028725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f61ca1f9c3cd1e448dd7f9adc561ba4
+      internalID: 1550309591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf974aaadc090c4c8e2e0546c0cebbd
+      internalID: -1938914767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b884606d5ff12c542969338b852571ac
+      internalID: 1437291896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184af5de27fa511438e5d120a7523fe1
+      internalID: 397888458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b1d829c2e6aad4aa4f8de33c76e35b
+      internalID: -932664528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940b6b188986c4f4fa33728d1715cf01
+      internalID: -1932017697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_29
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da66bb2d10d2c1a42ba6e17ed9b23132
+      internalID: -1948322865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1016
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbbb6dbdd60bba47a14034ba9b95fe8
+      internalID: 741010924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b56d6975a567846a5366a9fbc16c63
+      internalID: -295565222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_32
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0540001329f50944aae924508852dce2
+      internalID: -354176520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1785de6c12f7f314a85346585b06166d
+      internalID: 1232757275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_34
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc94b5014a2a77941a1558ddfc8095d0
+      internalID: -622522710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_35
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0b36de31befd647acacebc23e352ff
+      internalID: 1818275944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28373a0c2a7ce44ea6e9e43dfa0f87a
+      internalID: -1251713595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_37
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c073a22b3f1d84dbea64641eaecc7a
+      internalID: -751057040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f470ac630af2d34cbbca3c58149c148
+      internalID: 1670373478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1000
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad573416cd36a742ad63cd840a27bcf
+      internalID: -1201852008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9274c4aa6978fe46a46a9c5550d120d
+      internalID: -1847410873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39d79c7c911f5b40a9ca54e36c7a612
+      internalID: -915137571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9118257cc1bb1ab4c8adfa8c1c6f9c88
+      internalID: -1610911436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2d top down 1 bit assets_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1064
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729bbf48d8cc1cc4e8d6668b7d011649
+      internalID: 448820199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      2d top down 1 bit assets_0: 279968033
+      2d top down 1 bit assets_1: 340157700
+      2d top down 1 bit assets_10: 670105308
+      2d top down 1 bit assets_11: -146782168
+      2d top down 1 bit assets_12: -1651635614
+      2d top down 1 bit assets_13: 406617814
+      2d top down 1 bit assets_14: 688193908
+      2d top down 1 bit assets_15: -2095255987
+      2d top down 1 bit assets_16: -1095081124
+      2d top down 1 bit assets_17: 836979216
+      2d top down 1 bit assets_18: 193937245
+      2d top down 1 bit assets_19: 804349385
+      2d top down 1 bit assets_2: -861007742
+      2d top down 1 bit assets_20: 725268463
+      2d top down 1 bit assets_21: -1153845731
+      2d top down 1 bit assets_22: 1903028725
+      2d top down 1 bit assets_23: 1550309591
+      2d top down 1 bit assets_24: -1938914767
+      2d top down 1 bit assets_25: 1437291896
+      2d top down 1 bit assets_26: 397888458
+      2d top down 1 bit assets_27: -932664528
+      2d top down 1 bit assets_28: -1932017697
+      2d top down 1 bit assets_29: -1948322865
+      2d top down 1 bit assets_3: -819171974
+      2d top down 1 bit assets_30: 741010924
+      2d top down 1 bit assets_31: -295565222
+      2d top down 1 bit assets_32: -354176520
+      2d top down 1 bit assets_33: 1232757275
+      2d top down 1 bit assets_34: -622522710
+      2d top down 1 bit assets_35: 1818275944
+      2d top down 1 bit assets_36: -1251713595
+      2d top down 1 bit assets_37: -751057040
+      2d top down 1 bit assets_38: 1670373478
+      2d top down 1 bit assets_39: -1201852008
+      2d top down 1 bit assets_4: -808928263
+      2d top down 1 bit assets_40: -1847410873
+      2d top down 1 bit assets_41: -915137571
+      2d top down 1 bit assets_42: -1610911436
+      2d top down 1 bit assets_43: 448820199
+      2d top down 1 bit assets_5: 166168534
+      2d top down 1 bit assets_6: -1055377444
+      2d top down 1 bit assets_7: 446151956
+      2d top down 1 bit assets_8: -2010458348
+      2d top down 1 bit assets_9: -1905159917
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
