@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoSystem : MonoBehaviour
+public class WeaponSystem : MonoBehaviour
 {
     [Header("Shooting")]
     [SerializeField] private float m_projectileSpeed = 7;

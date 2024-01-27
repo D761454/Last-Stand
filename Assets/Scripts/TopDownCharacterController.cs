@@ -30,7 +30,7 @@ public class TopDownCharacterController : MonoBehaviour
     // UI
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
-    public AmmoSystem ammoSystem;
+    public WeaponSystem weaponSystem;
 
 
     /// <summary>
@@ -106,18 +106,18 @@ public class TopDownCharacterController : MonoBehaviour
         }
 
         // Was the fire button pressed (mapped to Left mouse button or gamepad trigger)
-        if (Input.GetButtonDown("Fire1") && (ammoSystem.GetAmmo() > 0) && !ammoSystem.m_reloading)
+        if (Input.GetButtonDown("Fire1") && (weaponSystem.GetAmmo() > 0) && !weaponSystem.m_reloading)
         {
-            if ((Time.time - ammoSystem.GetLastShot()) >= ammoSystem.GetFireTimer())
+            if ((Time.time - weaponSystem.GetLastShot()) >= weaponSystem.GetFireTimer())
             {
-                ammoSystem.Fire();
-                ammoSystem.SetLastShot();
+                weaponSystem.Fire();
+                weaponSystem.SetLastShot();
             }
         }
         
-        if ((Input.GetButtonDown("Reload") && (ammoSystem.GetAmmo() < ammoSystem.GetMaxAmmo()) && !ammoSystem.m_reloading) || (!ammoSystem.m_reloading && ammoSystem.GetAmmo() == 0))
+        if ((Input.GetButtonDown("Reload") && (weaponSystem.GetAmmo() < weaponSystem.GetMaxAmmo()) && !weaponSystem.m_reloading) || (!weaponSystem.m_reloading && weaponSystem.GetAmmo() == 0))
         {
-            StartCoroutine(ammoSystem.Reload());
+            StartCoroutine(weaponSystem.Reload());
         }
     }
 }

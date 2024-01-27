@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AmmoUI : MonoBehaviour
 {
-    private AmmoSystem ammoSystem;
+    private WeaponSystem weaponSystem;
     public TMPro.TextMeshProUGUI uiLabel;
 
     private void Start()
     {
         try
         {
-            ammoSystem = GetComponent<AmmoSystem>();
+            weaponSystem = GetComponent<WeaponSystem>();
         }
         catch (UnityException ex)
         {
@@ -23,6 +23,6 @@ public class AmmoUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uiLabel.text = ammoSystem.GetAmmo().ToString();
+        uiLabel.text = weaponSystem.GetAmmo().ToString();
     }
 }
