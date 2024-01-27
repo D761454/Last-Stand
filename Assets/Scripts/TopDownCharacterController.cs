@@ -112,6 +112,7 @@ public class TopDownCharacterController : MonoBehaviour
             {
                 weaponSystem.Fire();
                 weaponSystem.SetLastShot();
+                scoreSystem.score += 100;
             }
         }
         
