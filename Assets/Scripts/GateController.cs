@@ -7,7 +7,7 @@ public class GateController : MonoBehaviour
 {
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
-    BoxCollider2D payZone;
+    [SerializeField] GameObject gateParent;
     [SerializeField] private int m_cost;
 
     // Start is called before the first frame update
@@ -29,15 +29,6 @@ public class GateController : MonoBehaviour
         {
             Debug.LogException(ex, this);
         }
-
-        try
-        {
-            payZone = GetComponentInChildren<BoxCollider2D>();
-        }
-        catch (UnityException ex)
-        {
-            Debug.LogException(ex, this);
-        }
     }
 
     // Update is called once per frame
@@ -50,7 +41,13 @@ public class GateController : MonoBehaviour
     {
         if (scoreSystem.score >= m_cost)
         {
-            Destroy(gameObject);
+            scoreSystem.RemoveScore(m_cost);
+            Destroy(gateParent);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        BuyDoor();
     }
 }
