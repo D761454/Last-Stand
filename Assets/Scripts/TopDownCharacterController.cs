@@ -26,20 +26,12 @@ public class TopDownCharacterController : MonoBehaviour
     [Header("STD Attributes")]
     [SerializeField] private int m_health;
     [SerializeField] private int m_maxHealth = 9;
+
+    // UI
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
+    public AmmoSystem ammoSystem;
 
-    [Header("Shooting")]
-    [SerializeField] private float m_projectileSpeed = 7;
-    [SerializeField] private GameObject m_bulletPrefab;
-    [SerializeField] private Transform m_firePoint;
-    [SerializeField] private int m_ammo;
-    [SerializeField] private int m_maxAmmo;
-
-    [SerializeField] private float m_fireTimer = 0.5f;
-    [SerializeField] private float m_reloadTimer = 1.0f;
-    private bool m_reloading = false;
-    private float m_lastShot;
 
     /// <summary>
     /// When the script first initialises this gets called, use this for grabbing componenets
@@ -56,7 +48,6 @@ public class TopDownCharacterController : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        m_ammo = m_maxAmmo;
         try
         {
             GameObject scoreParent = GameObject.Find("scoreSystem");
@@ -115,44 +106,18 @@ public class TopDownCharacterController : MonoBehaviour
         }
 
         // Was the fire button pressed (mapped to Left mouse button or gamepad trigger)
-        if (Input.GetButtonDown("Fire1") && (m_ammo > 0) && !m_reloading)
+        if (Input.GetButtonDown("Fire1") && (ammoSystem.GetAmmo() > 0) && !ammoSystem.m_reloading)
         {
-            if (Time.time - m_lastShot >= m_fireTimer)
+            if ((Time.time - ammoSystem.GetLastShot()) >= ammoSystem.GetFireTimer())
             {
-                Fire();
-                m_lastShot = Time.time;
+                ammoSystem.Fire();
+                ammoSystem.SetLastShot();
             }
         }
         
-        if ((Input.GetButtonDown("Reload") && (m_ammo < m_maxAmmo) && !m_reloading) || (!m_reloading && m_ammo == 0))
+        if ((Input.GetButtonDown("Reload") && (ammoSystem.GetAmmo() < ammoSystem.GetMaxAmmo()) && !ammoSystem.m_reloading) || (!ammoSystem.m_reloading && ammoSystem.GetAmmo() == 0))
         {
-            StartCoroutine(Reload());
+            StartCoroutine(ammoSystem.Reload());
         }
-    }
-
-    void Fire()
-    {
-        Vector3 mousePointOnScreen = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 fireOrigin = m_firePoint.position;
-
-        Vector2 fireDir = mousePointOnScreen - fireOrigin;
-
-        GameObject bulletToSpawn = Instantiate(m_bulletPrefab, transform.position, Quaternion.AngleAxis(Mathf.Rad2Deg * Mathf.Atan(fireDir.y / fireDir.x) - 90, Vector3.forward));
-        // uses rad to degrees conversion for ease of use, atan used to give angle, V3.forward = z axis = desired rotation axis
-
-        if (bulletToSpawn.GetComponent<Rigidbody2D>() != null)
-        {
-            bulletToSpawn.GetComponent<Rigidbody2D>().AddForce(fireDir.normalized * m_projectileSpeed, ForceMode2D.Impulse);
-            m_ammo--;
-            scoreSystem.AddScore(10);
-        }
-    }
-
-    IEnumerator Reload()
-    {
-        m_reloading = true;
-        yield return new WaitForSeconds(m_reloadTimer);
-        m_ammo = m_maxAmmo;
-        m_reloading = false;
     }
 }
