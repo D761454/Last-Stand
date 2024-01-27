@@ -42,12 +42,9 @@ public class GateController : MonoBehaviour
 
     void BuyDoor()
     {
-        if (scoreSystem.score >= m_cost)
-        {
-            scoreSystem.RemoveScore(m_cost);
-            uiLabel.text = "-";
-            Destroy(gateParent);
-        }
+        scoreSystem.RemoveScore(m_cost);
+        uiLabel.text = "-";
+        Destroy(gateParent);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -55,7 +52,7 @@ public class GateController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             uiLabel.text = m_cost.ToString();
-            if (Input.GetButtonDown("Buy"))
+            if (Input.GetButtonDown("Buy") && (scoreSystem.score >= m_cost))
             {
                 BuyDoor();
             }
