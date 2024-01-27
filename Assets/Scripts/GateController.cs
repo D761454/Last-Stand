@@ -7,6 +7,9 @@ public class GateController : MonoBehaviour
 {
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
+
+    public TMPro.TextMeshProUGUI uiLabel;
+
     [SerializeField] GameObject gateParent;
     [SerializeField] private int m_cost;
 
@@ -42,12 +45,25 @@ public class GateController : MonoBehaviour
         if (scoreSystem.score >= m_cost)
         {
             scoreSystem.RemoveScore(m_cost);
+            uiLabel.text = "-";
             Destroy(gateParent);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        BuyDoor();
+        if (collision.gameObject.tag == "Player")
+        {
+            uiLabel.text = m_cost.ToString();
+            if (Input.GetButtonDown("Buy"))
+            {
+                BuyDoor();
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        uiLabel.text = "-";
     }
 }
