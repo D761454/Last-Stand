@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Level
   - Projectile
+  - Gate
   layers:
   - Default
   - TransparentFX

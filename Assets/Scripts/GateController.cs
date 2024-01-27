@@ -9,6 +9,7 @@ public class GateController : MonoBehaviour
     GameObject scoreParent;
 
     public TMPro.TextMeshProUGUI uiLabel;
+    public bool m_purchase = false;
 
     [SerializeField] GameObject gateParent;
     [SerializeField] private int m_cost;
@@ -37,7 +38,10 @@ public class GateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Buy"))
+        {
+            m_purchase = true;
+        }
     }
 
     void BuyDoor()
@@ -52,9 +56,10 @@ public class GateController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             uiLabel.text = m_cost.ToString();
-            if (Input.GetButtonDown("Buy") && (scoreSystem.score >= m_cost))
+            if (m_purchase && (scoreSystem.score >= m_cost))
             {
                 BuyDoor();
+                m_purchase = false;
             }
         }
     }
