@@ -57,9 +57,15 @@ public class GateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Buy"))
+        if (Input.GetButtonDown("Buy") && uiLabel.text != "-")
         {
             m_purchase = true;
+        }
+
+        // reset purchase as it does not work in in buy door or on trigger stay 
+        if (uiLabel.text == "-")
+        {
+            m_purchase = false;
         }
     }
 
@@ -77,7 +83,7 @@ public class GateController : MonoBehaviour
             uiLabel.text = m_cost.ToString();
             if (m_purchase && (scoreSystem.score >= m_cost))
             {
-                m_purchase = false;
+                Debug.Log("Switch");
                 BuyDoor();
             }
         }
