@@ -52,6 +52,9 @@ public class WeaponSystem : MonoBehaviour
         m_lastShot = Time.time;
     }
 
+    /// <summary>
+    /// Handles Bullet Instantiation, propulsion and ammo removal
+    /// </summary>
     public void Fire()
     {
         Vector3 mousePointOnScreen = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -69,6 +72,9 @@ public class WeaponSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles Reloading
+    /// </summary>
     public IEnumerator Reload()
     {
         m_reloading = true;

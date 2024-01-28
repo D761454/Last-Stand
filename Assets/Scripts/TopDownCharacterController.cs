@@ -29,8 +29,6 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private int m_maxHealth = 9;
 
     // UI
-    private ScoreSystem scoreSystem;
-    GameObject scoreParent;
     public WeaponSystem weaponSystem;
 
 
@@ -49,22 +47,7 @@ public class TopDownCharacterController : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        try
-        {
-            GameObject scoreParent = GameObject.Find("scoreSystem");
-            if (scoreParent != null)
-            {
-                scoreSystem = scoreParent.GetComponent<ScoreSystem>();
-            }
-            else
-            {
-                Debug.Log("scoreSystem not Found!");
-            }
-        }
-        catch (UnityException ex)
-        {
-            Debug.LogException(ex, this);
-        }
+        
     }
 
     /// <summary>
@@ -113,7 +96,6 @@ public class TopDownCharacterController : MonoBehaviour
             {
                 weaponSystem.Fire();
                 weaponSystem.SetLastShot();
-                scoreSystem.score += 100;
             }
         }
         
