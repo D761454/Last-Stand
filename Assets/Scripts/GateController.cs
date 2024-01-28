@@ -85,7 +85,7 @@ public class GateController : MonoBehaviour
             uiLabel.text = m_cost.ToString();
             if (m_purchase && (scoreSystem.score >= m_cost))
             {
-                Debug.Log("Switch");
+                spawnPoints.SetActive(true);
                 BuyDoor();
             }
         }
