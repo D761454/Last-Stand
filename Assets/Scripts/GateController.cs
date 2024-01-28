@@ -73,7 +73,7 @@ public class GateController : MonoBehaviour
     {
         scoreSystem.RemoveScore(m_cost);
         uiLabel.text = "-";
-        Destroy(gateParent);
+        gateParent.SetActive(false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
