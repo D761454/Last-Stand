@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4813765205347193356}
   - component: {fileID: 209007899026126205}
   - component: {fileID: -4898833532837528506}
+  - component: {fileID: -9125370463891198339}
   m_Layer: 0
   m_Name: Bullet_RPG
   m_TagString: Projectile
@@ -159,5 +160,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e3be2d56ccbbd14991cf022295bce28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-9125370463891198339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6120569653371869877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec2f323b7593c641a10818621151ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
