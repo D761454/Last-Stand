@@ -9,6 +9,8 @@ public class GateController : MonoBehaviour
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
 
+    [SerializeField] GameObject spawnPoints;
+
     GameObject costParent;
     private TMPro.TextMeshProUGUI uiLabel;
     public bool m_purchase = false;
