@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ public class GateController : MonoBehaviour
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
 
-    public TMPro.TextMeshProUGUI uiLabel;
+    GameObject costParent;
+    private TMPro.TextMeshProUGUI uiLabel;
     public bool m_purchase = false;
 
     [SerializeField] GameObject gateParent;
@@ -19,7 +21,7 @@ public class GateController : MonoBehaviour
     {
         try
         {
-            GameObject scoreParent = GameObject.Find("scoreSystem");
+            scoreParent = GameObject.Find("scoreSystem");
             if (scoreParent != null)
             {
                 scoreSystem = scoreParent.GetComponent<ScoreSystem>();
@@ -27,6 +29,23 @@ public class GateController : MonoBehaviour
             else
             {
                 Debug.Log("scoreSystem not Found!");
+            }
+        }
+        catch (UnityException ex)
+        {
+            Debug.LogException(ex, this);
+        }
+
+        try
+        {
+            costParent = GameObject.Find("Cost");
+            if (costParent != null)
+            {
+                uiLabel = costParent.GetComponent<TextMeshProUGUI>();
+            }
+            else
+            {
+                Debug.Log("TextMeshProUGUI not found!");
             }
         }
         catch (UnityException ex)
@@ -58,8 +77,8 @@ public class GateController : MonoBehaviour
             uiLabel.text = m_cost.ToString();
             if (m_purchase && (scoreSystem.score >= m_cost))
             {
-                BuyDoor();
                 m_purchase = false;
+                BuyDoor();
             }
         }
     }

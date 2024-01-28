@@ -12,7 +12,7 @@ public class DestroyOnCollision : MonoBehaviour
     {
         try
         {
-            GameObject scoreParent = GameObject.Find("scoreSystem");
+            scoreParent = GameObject.Find("scoreSystem");
             if (scoreParent != null)
             {
                 scoreSystem = scoreParent.GetComponent<ScoreSystem>();
