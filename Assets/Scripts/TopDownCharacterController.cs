@@ -27,6 +27,8 @@ public class TopDownCharacterController : MonoBehaviour
     [Header("STD Attributes")]
     [SerializeField] private int m_health;
     [SerializeField] private int m_maxHealth = 9;
+    [SerializeField] private float m_dashCooldown = 0.5f;
+    private float m_lastDash;
 
     // UI
     public WeaponSystem weaponSystem;
@@ -81,7 +83,11 @@ public class TopDownCharacterController : MonoBehaviour
 
             if (Input.GetButtonDown("Dash"))
             {
-                animator.SetTrigger("Dashing");
+                if ((Time.time - m_lastDash) >= m_dashCooldown)
+                {
+                    animator.SetTrigger("Dashing");
+                    m_lastDash = Time.time;
+                }
             }
 
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("dashTree"))
