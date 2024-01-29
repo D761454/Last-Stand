@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Gate
   - Enemy
+  - LvlDmg
   layers:
   - Default
   - TransparentFX

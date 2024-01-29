@@ -78,6 +78,16 @@ public class TopDownCharacterController : MonoBehaviour
 
             //And set the speed to 1, so they move!
             playerSpeed = 1f;
+
+            if (Input.GetButtonDown("Dash"))
+            {
+                animator.SetTrigger("Dashing");
+            }
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("dashTree"))
+            {
+                playerSpeed = 2f;
+            }
         }
         else
         {
