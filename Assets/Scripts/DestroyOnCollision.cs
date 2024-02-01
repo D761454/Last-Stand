@@ -40,6 +40,7 @@ public class DestroyOnCollision : MonoBehaviour
         else if (collision.tag == "Enemy")
         {
             scoreSystem.AddScore(100);
+            collision.SendMessage("TakeDamage");
             Destroy(gameObject);
         }
     }
