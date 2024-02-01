@@ -17,19 +17,32 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int m_maxHealth = 3;
     [SerializeField] private int level = 1;
 
+    public Transform m_player;
+    public float m_stoppingDistance;
+
+    enum EnemyStates
+    {
+        Idle,
+        Walk
+    }
+    EnemyStates m_enemyStates;
+
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
 
     private void Awake()
     {
         //Get the attached components so we can use them later
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        m_health = m_maxHealth;
+        m_player = FindObjectOfType<TopDownCharacterController>().transform;
+
         try
         {
             GameObject scoreParent = GameObject.Find("scoreSystem");
@@ -51,6 +64,9 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector2.Distance(transform.position, m_player.position) >= m_stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, m_player.position, enemySpeed * Time.deltaTime);
+        }
     }
 }
