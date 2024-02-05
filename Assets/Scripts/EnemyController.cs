@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private Animator animator;
     private Rigidbody2D rb;
+    private Animator animator;
 
     [Header("STD Attributes")]
     [SerializeField] private int m_health;
     [SerializeField] private int m_maxHealth = 3;
     [SerializeField] private int level = 1;
+
+    private Transform m_target;
+    NavMeshAgent m_agent;
 
     enum EnemyStates
     {
@@ -25,7 +29,7 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         //Get the attached components so we can use them later
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponentInChildren<Rigidbody2D>();
     }
 
@@ -33,6 +37,9 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         m_health = m_maxHealth;
+
+        m_agent = GetComponent<NavMeshAgent>();
+        m_target = FindObjectOfType<TopDownCharacterController>().transform;
 
         try
         {
@@ -55,6 +62,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_agent.SetDestination(m_target.position);
+
         if (m_health <= 0)
         {
             Destroy(gameObject);
