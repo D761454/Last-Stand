@@ -1,3 +1,4 @@
+using NavMeshPlus.Components;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -76,6 +77,8 @@ public class GateController : MonoBehaviour
         scoreSystem.RemoveScore(m_cost);
         uiLabel.text = "-";
         gateParent.SetActive(false);
+        NavMeshSurface nm = GameObject.FindObjectOfType<NavMeshSurface>();
+        nm.UpdateNavMesh(nm.navMeshData); // only update changes to nav mesh, not entire thing
     }
 
     private void OnTriggerStay2D(Collider2D collision)
