@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
         Idle,
         Walk
     }
-    EnemyStates m_enemyStates;
+    EnemyStates m_enemyStates = EnemyStates.Idle;
 
     private ScoreSystem scoreSystem;
     GameObject scoreParent;
@@ -67,6 +67,30 @@ public class EnemyController : MonoBehaviour
         if (m_health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        switch (m_enemyStates)
+        {
+            case EnemyStates.Idle:
+                animator.SetFloat("Horizontal", m_agent.velocity.x);
+                animator.SetFloat("Vertical", m_agent.velocity.y);
+                animator.SetFloat("Speed", 0);
+                break;
+            case EnemyStates.Walk:
+                animator.SetFloat("Horizontal", m_agent.velocity.x);
+                animator.SetFloat("Vertical", m_agent.velocity.y);
+                animator.SetFloat("Speed", 1);
+                break;
+            default: break;
+        }
+
+        if (m_agent.velocity.magnitude != 0)
+        {
+            m_enemyStates = EnemyStates.Walk;
+        }
+        else
+        {
+            m_enemyStates = EnemyStates.Idle;
         }
     }
 
