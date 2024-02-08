@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class GateController : MonoBehaviour
 {
@@ -76,8 +78,8 @@ public class GateController : MonoBehaviour
     {
         scoreSystem.RemoveScore(m_cost);
         uiLabel.text = "-";
+        gameObject.GetComponent<NavMeshObstacle>().carving = false;
         gateParent.SetActive(false);
-        StartCoroutine(UpdateAsyncNavMesh());
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -99,16 +101,5 @@ public class GateController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         uiLabel.text = "-";
-    }
-
-    IEnumerator UpdateAsyncNavMesh()
-    {
-        NavMeshSurface nm = GameObject.FindObjectOfType<NavMeshSurface>();
-        AsyncOperation asyncUpdate1 = nm.UpdateNavMesh(nm.navMeshData); // only update changes to nav mesh, not entire thing
-
-        while(!asyncUpdate1.isDone)
-        {
-            yield return null;
-        }
     }
 }
