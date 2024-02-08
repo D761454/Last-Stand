@@ -35,10 +35,12 @@ public class DestroyOnCollision : MonoBehaviour
     {
         if (collision.tag == "Level")
         {
+            VFXManager.CreateProjHit(gameObject.transform.position);
             Destroy(gameObject);
         }
         else if (collision.tag == "Enemy")
         {
+            VFXManager.CreateProjHit(gameObject.transform.position);
             scoreSystem.AddScore(100);
             Destroy(gameObject);
         }
