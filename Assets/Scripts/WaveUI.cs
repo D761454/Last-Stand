@@ -23,6 +23,6 @@ public class WaveUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uiLabel.text = waveSystem.wave.ToString();
+        //uiLabel.text = waveSystem.wave.ToString();
     }
 }
