@@ -72,6 +72,7 @@ public class WaveController : MonoBehaviour
             StartCoroutine(waveSystem.NextWave());
         }
 
+        // fix
         Transform spawnLocation = spawns[Random.Range(0, spawns.Length)];
 
         waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab);
