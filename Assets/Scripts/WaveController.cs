@@ -38,19 +38,15 @@ public class WaveController : MonoBehaviour
             spawnParent = GameObject.Find("z_spawns");
             if (spawnParent != null)
             {
-                // go through each child getting their transform component then going through each component to add the parent game object to an array
-                // done as cannot get component game object
-                var buildings = new ArrayList();
-                Transform[] tfs;
-                tfs = spawnParent.GetComponentsInChildren<Transform>();
-                foreach (Transform t in tfs)
-                {
-                    buildings.Add(t.gameObject);
-                }
+                Transform[] spawns;
 
-                foreach (GameObject s in buildings)
+                // included parent - child - grandchild
+                spawns = spawnParent.GetComponentsInChildren<Transform>(true);
+
+                //db
+                foreach (Transform t in spawns)
                 {
-                    spawns = s.GetComponentsInChildren<Transform>();
+                    Debug.Log(t.position);
                 }
             }
             else
@@ -75,7 +71,7 @@ public class WaveController : MonoBehaviour
         if (waveSystem.m_zToSpawn > 0 && !waveSystem.m_SECR)
         {
             Transform spawnLocation = spawns[Random.Range(0, spawns.Length)];
-
+            Debug.Log(spawnLocation.position);
             StartCoroutine(waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab));
         }
     }
