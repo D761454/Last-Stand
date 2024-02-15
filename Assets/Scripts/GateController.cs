@@ -14,6 +14,9 @@ public class GateController : MonoBehaviour
 
     [SerializeField] GameObject spawnPoints;
 
+    GameObject waveParent;
+    WaveController waveController;
+
     GameObject costParent;
     private TMPro.TextMeshProUGUI uiLabel;
     public bool m_purchase = false;
@@ -57,6 +60,23 @@ public class GateController : MonoBehaviour
         {
             Debug.LogException(ex, this);
         }
+
+        try
+        {
+            waveParent = GameObject.Find("waveSystem");
+            if (waveParent != null)
+            {
+                waveController = waveParent.GetComponent<WaveController>();
+            }
+            else
+            {
+                Debug.Log("wave system not Found!");
+            }
+        }
+        catch (UnityException ex)
+        {
+            Debug.LogException(ex, this);
+        }
     }
 
     // Update is called once per frame
@@ -74,14 +94,21 @@ public class GateController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// take score from player and remove door
+    /// </summary>
     void BuyDoor()
     {
         scoreSystem.RemoveScore(m_cost);
         uiLabel.text = "-";
         gameObject.GetComponent<NavMeshObstacle>().carving = false;
         gateParent.SetActive(false);
+        waveController.UpdateSpawns();
     }
 
+    /// <summary>
+    /// display UI when near door, allow player to buy door
+    /// </summary>
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

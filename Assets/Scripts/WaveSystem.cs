@@ -9,13 +9,6 @@ public class WaveSystem : MonoBehaviour
     public bool m_NWCR = false;
     public bool m_SECR = false;
 
-    private WaveController waveController;
-
-    private void Start()
-    {
-        waveController = GetComponent<WaveController>();
-    }
-
     public IEnumerator NextWave()
     {
         m_NWCR = true;
@@ -23,7 +16,6 @@ public class WaveSystem : MonoBehaviour
         // increment wave and calculate total enemies for wave
         wave++;
         m_zToSpawn = (wave * 2) + 5;
-        waveController.UpdateSpawns();
         m_NWCR = false;
     }
 

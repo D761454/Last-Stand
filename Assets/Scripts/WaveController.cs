@@ -13,7 +13,10 @@ public class WaveController : MonoBehaviour
 
     [SerializeField] private GameObject m_enemyPrefab;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// grab wave system to use its Coroutines
+    /// update spawns as player unable to buy door and update spawns at the start
+    /// </summary>
     void Start()
     {
         try
@@ -24,13 +27,21 @@ public class WaveController : MonoBehaviour
         {
             Debug.LogException(ex, this);
         }
+
+        UpdateSpawns();
     }
 
+    /// <summary>
+    /// checks whether 2 positions are the same, all non spawn points have pos (0.00, 0.00, 0.00)
+    /// </summary>
     public bool SameAsSP(Transform transform)
     {
         return transform.position == spawnParent.transform.position;
     }
 
+    /// <summary>
+    /// updates an array of transforms for spawning enemies, is called on buying a door/gate
+    /// </summary>
     public void UpdateSpawns()
     {
         try
@@ -57,7 +68,10 @@ public class WaveController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// checks if no enemies are present, all have been spawned and currently not loading next round - to then load next round.
+    /// also checks if we have available enemies to spawn and an enemy spawn cooldown is not goung on - to then spawn a new enemy.
+    /// </summary>
     void Update()
     {
         if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && waveSystem.m_zToSpawn == 0 && !waveSystem.m_NWCR)
