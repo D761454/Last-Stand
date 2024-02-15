@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
     private WaveSystem waveSystem;
-    GameObject waveParent;
     GameObject spawnParent;
     int m_timeBetweenSpawn = 3;
 
@@ -18,36 +18,33 @@ public class WaveController : MonoBehaviour
     {
         try
         {
-            waveParent = GameObject.Find("waveSystem");
-            if (waveParent != null)
-            {
-                waveSystem = waveParent.GetComponent<WaveSystem>();
-            }
-            else
-            {
-                Debug.Log("waveSystem not Found!");
-            }
+            waveSystem = GetComponent<WaveSystem>();
         }
         catch (UnityException ex)
         {
             Debug.LogException(ex, this);
         }
+    }
 
+    public bool SameAsSP(Transform transform)
+    {
+        return transform.position == spawnParent.transform.position;
+    }
+
+    public void UpdateSpawns()
+    {
         try
         {
             spawnParent = GameObject.Find("z_spawns");
             if (spawnParent != null)
             {
-                Transform[] spawns;
-
                 // included parent - child - grandchild
-                spawns = spawnParent.GetComponentsInChildren<Transform>(true);
+                var transforms = new HashSet<Transform>(spawnParent.GetComponentsInChildren<Transform>());
 
-                //db
-                foreach (Transform t in spawns)
-                {
-                    Debug.Log(t.position);
-                }
+                // remove parent and 1st layer children
+                transforms.RemoveWhere(SameAsSP);
+
+                spawns = transforms.ToArray();
             }
             else
             {
