@@ -67,14 +67,16 @@ public class WaveController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && waveSystem.m_zToSpawn == 0)
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && waveSystem.m_zToSpawn == 0 && !waveSystem.m_NWCR)
         {
             StartCoroutine(waveSystem.NextWave());
         }
 
-        // fix
-        Transform spawnLocation = spawns[Random.Range(0, spawns.Length)];
+        if (waveSystem.m_zToSpawn > 0 && !waveSystem.m_SECR)
+        {
+            Transform spawnLocation = spawns[Random.Range(0, spawns.Length)];
 
-        waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab);
+            StartCoroutine(waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab));
+        }
     }
 }
