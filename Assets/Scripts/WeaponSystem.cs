@@ -20,6 +20,7 @@ public class WeaponSystem : MonoBehaviour
     private void Start()
     {
         m_ammo = m_maxAmmo;
+        m_firePoint = GameObject.Find("character").GetComponent<Transform>();
     }
 
     public int GetAmmo()
