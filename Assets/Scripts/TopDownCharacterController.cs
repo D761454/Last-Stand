@@ -109,13 +109,27 @@ public class TopDownCharacterController : MonoBehaviour
                 animator.SetFloat("Speed", 0);
             }
 
-            // Was the fire button pressed (mapped to Left mouse button or gamepad trigger)
-            if (Input.GetButtonDown("Fire1") && (weaponSystem.GetAmmo() > 0) && !weaponSystem.m_reloading)
+            if (weaponSystem.gameObject.name == "Rifle")
             {
-                if ((Time.time - weaponSystem.GetLastShot()) >= weaponSystem.GetFireTimer())
+                if (Input.GetButton("Fire1") && (weaponSystem.GetAmmo() > 0) && !weaponSystem.m_reloading)
                 {
-                    weaponSystem.Fire();
-                    weaponSystem.SetLastShot();
+                    if ((Time.time - weaponSystem.GetLastShot()) >= weaponSystem.GetFireTimer())
+                    {
+                        weaponSystem.Fire();
+                        weaponSystem.SetLastShot();
+                    }
+                }
+            }
+            else
+            {
+                // Was the fire button pressed (mapped to Left mouse button or gamepad trigger)
+                if (Input.GetButtonDown("Fire1") && (weaponSystem.GetAmmo() > 0) && !weaponSystem.m_reloading)
+                {
+                    if ((Time.time - weaponSystem.GetLastShot()) >= weaponSystem.GetFireTimer())
+                    {
+                        weaponSystem.Fire();
+                        weaponSystem.SetLastShot();
+                    }
                 }
             }
 
