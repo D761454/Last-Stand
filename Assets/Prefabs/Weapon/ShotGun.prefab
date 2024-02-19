@@ -53,6 +53,7 @@ MonoBehaviour:
   m_reloading: 0
   m_ammo: 0
   m_maxAmmo: 4
+  m_spread: 1
 --- !u!114 &5739716429177840442
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class WeaponSystem : MonoBehaviour
 
     [SerializeField] private int m_ammo;
     [SerializeField] private int m_maxAmmo;
+    [SerializeField] private bool m_spread = false;
 
     private void Start()
     {
@@ -63,14 +64,18 @@ public class WeaponSystem : MonoBehaviour
 
         Vector2 fireDir = mousePointOnScreen - fireOrigin;
 
-        GameObject bulletToSpawn = Instantiate(m_bulletPrefab, fireOrigin, Quaternion.AngleAxis(Mathf.Rad2Deg * Mathf.Atan(fireDir.y / fireDir.x) - 90, Vector3.forward));
-        // uses rad to degrees conversion for ease of use, atan used to give angle, V3.forward = z axis = desired rotation axis
-
-        if (bulletToSpawn.GetComponent<Rigidbody2D>() != null)
+        if (!m_spread)
         {
-            bulletToSpawn.GetComponent<Rigidbody2D>().AddForce(fireDir.normalized * m_projectileSpeed, ForceMode2D.Impulse);
-            m_ammo--;
+            GameObject bulletToSpawn = Instantiate(m_bulletPrefab, fireOrigin, Quaternion.AngleAxis(Mathf.Rad2Deg * Mathf.Atan(fireDir.y / fireDir.x) - 90, Vector3.forward));
+            // uses rad to degrees conversion for ease of use, atan used to give angle, V3.forward = z axis = desired rotation axis
+
+            if (bulletToSpawn.GetComponent<Rigidbody2D>() != null)
+            {
+                bulletToSpawn.GetComponent<Rigidbody2D>().AddForce(fireDir.normalized * m_projectileSpeed, ForceMode2D.Impulse);
+                m_ammo--;
+            }
         }
+        
     }
 
     /// <summary>
