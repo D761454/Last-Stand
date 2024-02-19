@@ -19,13 +19,10 @@ public class WaveSystem : MonoBehaviour
         m_NWCR = false;
     }
 
-    public IEnumerator SpawnEnemy(Transform spawnPt, GameObject enemy)
+    public void SpawnEnemy(Transform spawnPt, GameObject enemy)
     {
-        m_SECR = true;
         Vector3 spawn = spawnPt.position;
         Instantiate(enemy, spawn, Quaternion.identity);
         m_zToSpawn--;
-        yield return new WaitForSeconds(3);
-        m_SECR = false;
     }
 }

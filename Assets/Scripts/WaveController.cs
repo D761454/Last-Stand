@@ -7,7 +7,8 @@ public class WaveController : MonoBehaviour
 {
     private WaveSystem waveSystem;
     GameObject spawnParent;
-    int m_timeBetweenSpawn = 3;
+    private float m_timeBetweenSpawn = 3.00f;
+    private float m_spawnTime;
 
     Transform[] spawns;
 
@@ -79,10 +80,11 @@ public class WaveController : MonoBehaviour
             StartCoroutine(waveSystem.NextWave());
         }
 
-        if (waveSystem.m_zToSpawn > 0 && !waveSystem.m_SECR)
+        if (waveSystem.m_zToSpawn > 0 && (Time.time - m_spawnTime) > m_timeBetweenSpawn)
         {
-            Transform spawnLocation = spawns[Random.Range(0, spawns.Length)];
-            StartCoroutine(waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab));
+            Transform spawnLocation = spawns[Random.Range(0, spawns.Length-1)];
+            waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab);
+            m_spawnTime = Time.time;
         }
     }
 }
