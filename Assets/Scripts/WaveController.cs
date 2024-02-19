@@ -82,7 +82,6 @@ public class WaveController : MonoBehaviour
         if (waveSystem.m_zToSpawn > 0 && !waveSystem.m_SECR)
         {
             Transform spawnLocation = spawns[Random.Range(0, spawns.Length)];
-            Debug.Log(spawnLocation.position);
             StartCoroutine(waveSystem.SpawnEnemy(spawnLocation, m_enemyPrefab));
         }
     }

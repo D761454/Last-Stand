@@ -29,6 +29,8 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private int m_maxHealth = 9;
     [SerializeField] private float m_dashCooldown = 0.5f;
     private float m_lastDash;
+    private float m_hitTime;
+    private bool m_dead = false;
 
     // UI
     public WeaponSystem weaponSystem;
@@ -67,57 +69,81 @@ public class TopDownCharacterController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        // read input from WASD keys
-        playerDirection.x = Input.GetAxis("Horizontal");
-        playerDirection.y = Input.GetAxis("Vertical");
-
-        // check if there is some movement direction, if there is something, then set animator flags and make speed = 1
-        if (playerDirection.magnitude != 0)
+        if (!m_dead)
         {
-            animator.SetFloat("Horizontal", playerDirection.x);
-            animator.SetFloat("Vertical", playerDirection.y);
-            animator.SetFloat("Speed", playerDirection.magnitude);
+            // read input from WASD keys
+            playerDirection.x = Input.GetAxisRaw("Horizontal");
+            playerDirection.y = Input.GetAxisRaw("Vertical");
 
-            //And set the speed to 1, so they move!
-            playerSpeed = 1f;
-
-            if (Input.GetButtonDown("Dash"))
+            // check if there is some movement direction, if there is something, then set animator flags and make speed = 1
+            if (playerDirection.magnitude != 0)
             {
-                if ((Time.time - m_lastDash) >= m_dashCooldown)
+                animator.SetFloat("Horizontal", playerDirection.x);
+                animator.SetFloat("Vertical", playerDirection.y);
+                animator.SetFloat("Speed", playerDirection.magnitude);
+
+                //And set the speed to 1, so they move!
+                playerSpeed = 1f;
+
+                if (Input.GetButtonDown("Dash"))
                 {
-                    animator.SetTrigger("Dashing");
-                    m_lastDash = Time.time;
+                    if ((Time.time - m_lastDash) >= m_dashCooldown)
+                    {
+                        animator.SetTrigger("Dashing");
+                        m_lastDash = Time.time;
+                    }
+                }
+
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("dashTree"))
+                {
+                    playerSpeed = 2f;
+                }
+            }
+            else
+            {
+                //Was the input just cancelled (released)? If so, set
+                //speed to 0
+                playerSpeed = 0f;
+
+                //Update the animator too, and return
+                animator.SetFloat("Speed", 0);
+            }
+
+            // Was the fire button pressed (mapped to Left mouse button or gamepad trigger)
+            if (Input.GetButtonDown("Fire1") && (weaponSystem.GetAmmo() > 0) && !weaponSystem.m_reloading)
+            {
+                if ((Time.time - weaponSystem.GetLastShot()) >= weaponSystem.GetFireTimer())
+                {
+                    weaponSystem.Fire();
+                    weaponSystem.SetLastShot();
                 }
             }
 
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("dashTree"))
+            if ((Input.GetButtonDown("Reload") && (weaponSystem.GetAmmo() < weaponSystem.GetMaxAmmo()) && !weaponSystem.m_reloading) || (!weaponSystem.m_reloading && weaponSystem.GetAmmo() == 0))
             {
-                playerSpeed = 2f;
-            }
-        }
-        else
-        {
-            //Was the input just cancelled (released)? If so, set
-            //speed to 0
-            playerSpeed = 0f;
-
-            //Update the animator too, and return
-            animator.SetFloat("Speed", 0);
-        }
-
-        // Was the fire button pressed (mapped to Left mouse button or gamepad trigger)
-        if (Input.GetButtonDown("Fire1") && (weaponSystem.GetAmmo() > 0) && !weaponSystem.m_reloading)
-        {
-            if ((Time.time - weaponSystem.GetLastShot()) >= weaponSystem.GetFireTimer())
-            {
-                weaponSystem.Fire();
-                weaponSystem.SetLastShot();
+                StartCoroutine(weaponSystem.Reload());
             }
         }
         
-        if ((Input.GetButtonDown("Reload") && (weaponSystem.GetAmmo() < weaponSystem.GetMaxAmmo()) && !weaponSystem.m_reloading) || (!weaponSystem.m_reloading && weaponSystem.GetAmmo() == 0))
+    }
+
+    /// <summary>
+    /// Uses a Trigger Collider to detect enemy collision
+    /// </summary>
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
         {
-            StartCoroutine(weaponSystem.Reload());
+            if ((Time.time - m_hitTime) >= 1.00f)
+            {
+                m_health--;
+                m_hitTime = Time.time;
+            }
+        }
+
+        if (m_health <= 0)
+        {
+            m_dead = true;
         }
     }
 }
