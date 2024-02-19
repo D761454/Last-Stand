@@ -22,7 +22,7 @@ public class WaveSystem : MonoBehaviour
     public void SpawnEnemy(Transform spawnPt, GameObject enemy)
     {
         Vector3 spawn = spawnPt.position;
-        Instantiate(enemy, spawn, Quaternion.identity);
+        Instantiate(enemy, spawn, Quaternion.identity, GameObject.Find("EnemyHolder").transform);
         m_zToSpawn--;
     }
 }
