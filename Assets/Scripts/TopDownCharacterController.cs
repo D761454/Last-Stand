@@ -134,7 +134,7 @@ public class TopDownCharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if ((Time.time - m_hitTime) >= 1.00f)
+            if ((Time.time - m_hitTime) >= 1.00f && !m_dead)
             {
                 m_health--;
                 m_hitTime = Time.time;
