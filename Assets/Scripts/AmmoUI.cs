@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AmmoUI : MonoBehaviour
@@ -18,6 +19,14 @@ public class AmmoUI : MonoBehaviour
             Debug.LogException(ex, this);
         }
 
+        try
+        {
+            uiLabel = GameObject.Find("Ammo").GetComponent<TMPro.TextMeshProUGUI>();
+        }
+        catch (UnityException ex)
+        {
+            Debug.LogException(ex, this);
+        }
     }
 
     // Update is called once per frame
