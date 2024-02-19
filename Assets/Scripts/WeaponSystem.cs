@@ -75,7 +75,22 @@ public class WeaponSystem : MonoBehaviour
                 m_ammo--;
             }
         }
-        
+        else
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                int randAngle = Random.Range(-10, 10);
+                Vector2 forceOffset = new Vector2(randAngle, randAngle);
+                GameObject bulletToSpawn = Instantiate(m_bulletPrefab, fireOrigin, Quaternion.AngleAxis(Mathf.Rad2Deg * Mathf.Atan(fireDir.y / fireDir.x) - (90 + randAngle), Vector3.forward));
+                // uses rad to degrees conversion for ease of use, atan used to give angle, V3.forward = z axis = desired rotation axis
+
+                if (bulletToSpawn.GetComponent<Rigidbody2D>() != null)
+                {
+                    bulletToSpawn.GetComponent<Rigidbody2D>().AddForce((fireDir.normalized + forceOffset) * m_projectileSpeed, ForceMode2D.Impulse);
+                }
+            }
+            m_ammo--;
+        }
     }
 
     /// <summary>
