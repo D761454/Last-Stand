@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class WeapnPickUp : MonoBehaviour
 {
-    [SerializeField] private GameObject m_weapon;
+    [SerializeField] private GameObject m_weaponPrefab;
 
-    // Start is called before the first frame update
-    void Start()
+    private GameObject m_weaponHolder;
+
+    private void Start()
     {
-        
+        m_weaponHolder = GameObject.Find("WeaponsHolder");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.tag == "Player")
+        {
+            foreach(Transform child in m_weaponHolder.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            Instantiate(m_weaponPrefab, m_weaponHolder.transform);
+        }
     }
 }
