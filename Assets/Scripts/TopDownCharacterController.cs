@@ -29,8 +29,10 @@ public class TopDownCharacterController : MonoBehaviour
     [SerializeField] private int m_maxHealth = 9;
     [SerializeField] private float m_dashCooldown = 0.5f;
     private float m_lastDash;
-    private float m_hitTime;
+
+    private bool m_iFrames;
     private bool m_dead = false;
+    private SpriteRenderer m_Sprite;
 
     // UI
     public WeaponSystem weaponSystem;
@@ -45,6 +47,7 @@ public class TopDownCharacterController : MonoBehaviour
         //Get the attached components so we can use them later
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        m_Sprite = GetComponent<SpriteRenderer>();
     }
 
     /// <summary>
@@ -149,6 +152,27 @@ public class TopDownCharacterController : MonoBehaviour
         
     }
 
+    private IEnumerator IFrames()
+    {
+        m_iFrames = !m_iFrames;
+
+        for (float i = 0; i < 1.5; i += 0.15f) // IFrames last 1.5 sec, with a change in player "visibility" every 0.15 seconds
+        {
+            if(m_Sprite.color.a == 1)
+            {
+                m_Sprite.color = new Color (1, 1 ,1 ,0);
+            }
+            else
+            {
+                m_Sprite.color = new Color(1, 1, 1, 1);
+            }
+
+            yield return new WaitForSeconds(0.15f);
+        }
+        m_Sprite.color = new Color(1, 1, 1, 1);
+        m_iFrames = !m_iFrames;
+    }
+
     /// <summary>
     /// Uses a Trigger Collider to detect enemy collision
     /// </summary>
@@ -156,17 +180,19 @@ public class TopDownCharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            if ((Time.time - m_hitTime) >= 1.00f && !m_dead)
+            if (m_iFrames)
             {
-                m_health--;
-                m_hitTime = Time.time;
+                return; // ignore dmg if in i frames
             }
+            m_health--;
         }
 
         if (m_health <= 0 && !m_dead)
         {
             m_dead = true;
             menuManager.OpenDeathScreen();
+            return;
         }
+        StartCoroutine(IFrames());
     }
 }
