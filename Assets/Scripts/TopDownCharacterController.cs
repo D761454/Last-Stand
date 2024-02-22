@@ -190,6 +190,7 @@ public class TopDownCharacterController : MonoBehaviour
                 return; // ignore dmg if in i frames
             }
             m_health--;
+            VFXManager.CreatePlayerHit(transform.position);
             StartCoroutine(IFrames());
         }
 
