@@ -55,6 +55,7 @@ public class TopDownCharacterController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        Time.timeScale = 1;
         try
         {
             menuManager = GameObject.Find("menuManager").GetComponent<MenuManager>();
@@ -149,14 +150,18 @@ public class TopDownCharacterController : MonoBehaviour
                 StartCoroutine(weaponSystem.Reload());
             }
         }
-        
+        else
+        {
+            playerDirection.x = 0;
+            playerDirection.y = 0;
+        }
     }
 
     private IEnumerator IFrames()
     {
         m_iFrames = !m_iFrames;
 
-        for (float i = 0; i < 1.5; i += 0.15f) // IFrames last 1.5 sec, with a change in player "visibility" every 0.15 seconds
+        for (float i = 0; i < 1; i += 0.1f) // IFrames last 1 sec, with a change in player "visibility" every 0.1 seconds
         {
             if(m_Sprite.color.a == 1)
             {
@@ -190,9 +195,13 @@ public class TopDownCharacterController : MonoBehaviour
         if (m_health <= 0 && !m_dead)
         {
             m_dead = true;
+            Time.timeScale = 0;
             menuManager.OpenDeathScreen();
             return;
         }
-        StartCoroutine(IFrames());
+        if (!m_iFrames)
+        {
+            StartCoroutine(IFrames());
+        }
     }
 }
