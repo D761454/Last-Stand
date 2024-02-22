@@ -190,6 +190,7 @@ public class TopDownCharacterController : MonoBehaviour
                 return; // ignore dmg if in i frames
             }
             m_health--;
+            StartCoroutine(IFrames());
         }
 
         if (m_health <= 0 && !m_dead)
@@ -198,10 +199,6 @@ public class TopDownCharacterController : MonoBehaviour
             Time.timeScale = 0;
             menuManager.OpenDeathScreen();
             return;
-        }
-        if (!m_iFrames)
-        {
-            StartCoroutine(IFrames());
         }
     }
 }
