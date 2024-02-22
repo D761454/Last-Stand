@@ -103,6 +103,7 @@ public class GateController : MonoBehaviour
         uiLabel.text = "-";
         gameObject.GetComponent<NavMeshObstacle>().carving = false;
         gateParent.SetActive(false);
+        scoreSystem.gameScore += 100;
         waveController.UpdateSpawns();
     }
 

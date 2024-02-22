@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject m_controls_Settings_Panel;
     public GameObject m_Loading_Screen;
+    public GameObject m_respawn_Panel;
+    public GameObject m_player_UI_Panel;
     bool isCSPanelOpen = false;
     bool loading = false;
 
@@ -20,6 +22,12 @@ public class MenuManager : MonoBehaviour
     {
         isCSPanelOpen = !isCSPanelOpen;
         m_controls_Settings_Panel.SetActive(isCSPanelOpen);
+    }
+
+    public void OpenDeathScreen()
+    {
+        m_respawn_Panel.SetActive(true);
+        m_player_UI_Panel.SetActive(false);
     }
 
     public void ReturnToMainMenu()
