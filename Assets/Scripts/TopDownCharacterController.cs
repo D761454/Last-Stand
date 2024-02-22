@@ -34,6 +34,7 @@ public class TopDownCharacterController : MonoBehaviour
 
     // UI
     public WeaponSystem weaponSystem;
+    MenuManager menuManager;
 
 
     /// <summary>
@@ -51,7 +52,14 @@ public class TopDownCharacterController : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        
+        try
+        {
+            menuManager = GameObject.Find("menuManager").GetComponent<MenuManager>();
+        }
+        catch (UnityException ex)
+        {
+            Debug.LogException(ex, this);
+        }
     }
 
     /// <summary>
@@ -155,9 +163,10 @@ public class TopDownCharacterController : MonoBehaviour
             }
         }
 
-        if (m_health <= 0)
+        if (m_health <= 0 && !m_dead)
         {
             m_dead = true;
+            menuManager.OpenDeathScreen();
         }
     }
 }

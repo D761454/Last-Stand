@@ -5033,6 +5033,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_controls_Settings_Panel: {fileID: 629863580}
   m_Loading_Screen: {fileID: 1318851744}
+  m_respawn_Panel: {fileID: 0}
+  m_player_UI_Panel: {fileID: 0}
 --- !u!1 &1450368296
 GameObject:
   m_ObjectHideFlags: 0

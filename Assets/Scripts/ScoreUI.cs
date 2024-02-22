@@ -6,6 +6,7 @@ public class ScoreUI : MonoBehaviour
 {
     private ScoreSystem scoreSystem;
     public TMPro.TextMeshProUGUI uiLabel;
+    public TMPro.TextMeshProUGUI uiLabelTotal;
 
     private void Start()
     {
@@ -24,5 +25,6 @@ public class ScoreUI : MonoBehaviour
     void Update()
     {
         uiLabel.text = scoreSystem.score.ToString();
+        uiLabelTotal.text = "Score: " + scoreSystem.gameScore.ToString();
     }
 }
