@@ -50,7 +50,7 @@ public class TopDownCharacterController : MonoBehaviour
         m_Sprite = GetComponent<SpriteRenderer>();
     }
 
-    void PickUpWeapon()
+    public void PickUpWeapon()
     {
         weaponSystem = GameObject.Find("WeaponsHolder").GetComponentInChildren<WeaponSystem>();
     }
