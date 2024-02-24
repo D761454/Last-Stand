@@ -13,7 +13,7 @@ public class WeaponPickUp : MonoBehaviour
     private void Start()
     {
         m_weaponHolder = GameObject.Find("WeaponsHolder");
-        m_characterController = GameObject.Find("character")
+        m_characterController = GameObject.Find("character");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
