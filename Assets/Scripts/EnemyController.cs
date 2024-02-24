@@ -11,7 +11,6 @@ public class EnemyController : MonoBehaviour
     [Header("STD Attributes")]
     [SerializeField] private int m_health;
     [SerializeField] private int m_maxHealth = 3;
-    [SerializeField] private int level = 1;
 
     private Transform m_target;
     NavMeshAgent m_agent;
@@ -22,9 +21,6 @@ public class EnemyController : MonoBehaviour
         Walk
     }
     EnemyStates m_enemyStates = EnemyStates.Idle;
-
-    private ScoreSystem scoreSystem;
-    GameObject scoreParent;
 
     private void Awake()
     {
@@ -40,23 +36,6 @@ public class EnemyController : MonoBehaviour
 
         m_agent = GetComponent<NavMeshAgent>();
         m_target = FindObjectOfType<TopDownCharacterController>().transform;
-
-        try
-        {
-            GameObject scoreParent = GameObject.Find("scoreSystem");
-            if (scoreParent != null)
-            {
-                scoreSystem = scoreParent.GetComponent<ScoreSystem>();
-            }
-            else
-            {
-                Debug.Log("scoreSystem not Found!");
-            }
-        }
-        catch (UnityException ex)
-        {
-            Debug.LogException(ex, this);
-        }
     }
 
     // Update is called once per frame

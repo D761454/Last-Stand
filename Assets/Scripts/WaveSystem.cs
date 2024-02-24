@@ -7,7 +7,6 @@ public class WaveSystem : MonoBehaviour
     public int wave = 0;
     public int m_zToSpawn = 0;
     public bool m_NWCR = false;
-    public bool m_SECR = false;
 
     private PickUpResetter m_reset;
 
@@ -22,10 +21,7 @@ public class WaveSystem : MonoBehaviour
 
         if (wave % 5 == 0)
         {
-            for (int i = 0; i < m_reset.PU.Length - 1; i++)
-            {
-                m_reset.PU[i].gameObject.SetActive(true);
-            }
+            m_reset.Reset();
         }
     }
 
