@@ -50,6 +50,11 @@ public class TopDownCharacterController : MonoBehaviour
         m_Sprite = GetComponent<SpriteRenderer>();
     }
 
+    void PickUpWeapon()
+    {
+        weaponSystem = GameObject.Find("WeaponsHolder").GetComponentInChildren<WeaponSystem>();
+    }
+
     /// <summary>
     /// Called after Awake(), and is used to initialize variables e.g. set values on the player
     /// </summary>
