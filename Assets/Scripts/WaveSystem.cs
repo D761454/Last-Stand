@@ -9,6 +9,8 @@ public class WaveSystem : MonoBehaviour
     public bool m_NWCR = false;
     public bool m_SECR = false;
 
+    private PickUpResetter m_reset;
+
     public IEnumerator NextWave()
     {
         m_NWCR = true;
@@ -17,6 +19,14 @@ public class WaveSystem : MonoBehaviour
         wave++;
         m_zToSpawn = (wave * 2) + 5;
         m_NWCR = false;
+
+        if (wave % 5 == 0)
+        {
+            for (int i = 0; i < m_reset.PU.Length - 1; i++)
+            {
+                m_reset.PU[i].gameObject.SetActive(true);
+            }
+        }
     }
 
     public void SpawnEnemy(Transform spawnPt, GameObject enemy)
