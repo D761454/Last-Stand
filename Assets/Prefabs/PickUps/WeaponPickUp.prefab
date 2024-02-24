@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3995619705754259528}
   - component: {fileID: 4714769833809545364}
   - component: {fileID: 7617573875767229454}
+  - component: {fileID: 7580933686370583302}
   m_Layer: 0
   m_Name: WeaponPickUp
   m_TagString: Untagged
@@ -120,3 +121,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7580933686370583302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766662000628960036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1852232476fb21448adf105866c0525c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponPrefab: {fileID: 0}
