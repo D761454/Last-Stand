@@ -21,11 +21,10 @@ public class WeaponPickUp : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            foreach(Transform child in m_weaponHolder.transform)
-            {
-                Destroy(child.gameObject);
-            }
-            Instantiate(m_weaponPrefab, m_weaponHolder.transform);
+            m_characterController.weaponSystem.gameObject.SetActive(false);
+
+            m_weaponPrefab.SetActive(true);
+
             m_characterController.weaponSystem = m_weaponHolder.GetComponentInChildren<WeaponSystem>();
             gameObject.SetActive(false);
         }
