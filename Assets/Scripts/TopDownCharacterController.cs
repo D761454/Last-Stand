@@ -202,4 +202,12 @@ public class TopDownCharacterController : MonoBehaviour
             return;
         }
     }
+
+    public void Heal()
+    {
+        if (m_health < m_maxHealth)
+        {
+            m_health++;
+        }
+    }
 }

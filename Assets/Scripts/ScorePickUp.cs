@@ -34,8 +34,8 @@ public class ScorePickUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            scoreSystem.AddScore(score);
             gameObject.SetActive(false);
+            scoreSystem.AddScore(score);
         }
     }
 }
