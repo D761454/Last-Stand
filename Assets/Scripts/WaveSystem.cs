@@ -21,8 +21,7 @@ public class WaveSystem : MonoBehaviour
         yield return new WaitForSeconds(5);
         // increment wave and calculate total enemies for wave
         wave++;
-        //m_zToSpawn = (wave * 2) + 5;
-        m_zToSpawn = 1;
+        m_zToSpawn = (wave * 2) + 5;
         m_NWCR = false;
 
         if (wave % 5 == 0)

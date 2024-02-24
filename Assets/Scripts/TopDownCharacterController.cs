@@ -37,6 +37,8 @@ public class TopDownCharacterController : MonoBehaviour
     // UI
     public WeaponSystem weaponSystem;
     MenuManager menuManager;
+    GameObject m_heartPanel;
+    [SerializeField] GameObject m_heartPrefab;
 
 
     /// <summary>
@@ -63,6 +65,20 @@ public class TopDownCharacterController : MonoBehaviour
         catch (UnityException ex)
         {
             Debug.LogException(ex, this);
+        }
+
+        try
+        {
+            m_heartPanel = GameObject.Find("HeartPanel");
+        }
+        catch (UnityException ex)
+        {
+            Debug.LogException(ex, this);
+        }
+
+        for (int i = 0; i < m_maxHealth; i++)
+        {
+            Instantiate(m_heartPrefab, m_heartPanel.transform);
         }
     }
 
@@ -190,6 +206,7 @@ public class TopDownCharacterController : MonoBehaviour
                 return; // ignore dmg if in i frames
             }
             m_health--;
+            Destroy(m_heartPanel.GetComponent<Transform>().GetChild(0).gameObject);
             VFXManager.CreatePlayerHit(transform.position);
             StartCoroutine(IFrames());
         }
@@ -208,6 +225,7 @@ public class TopDownCharacterController : MonoBehaviour
         if (m_health < m_maxHealth)
         {
             m_health++;
+            Instantiate(m_heartPrefab, m_heartPanel.transform);
         }
     }
 }
