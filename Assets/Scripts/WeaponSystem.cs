@@ -82,7 +82,7 @@ public class WeaponSystem : MonoBehaviour
 
             for (int i = 0; i < 5; i++)
             {
-                int randAngle = Random.Range(-10, 10);
+                int randAngle = Random.Range(-5, 5);
                 Vector3 forceOffset = new Vector2(randAngle, randAngle);
 
                 Vector2 fireDir = mousePointOnScreen - fireOrigin + forceOffset;

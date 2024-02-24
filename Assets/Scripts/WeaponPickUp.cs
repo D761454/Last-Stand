@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponPickUp : MonoBehaviour
@@ -8,12 +9,12 @@ public class WeaponPickUp : MonoBehaviour
 
     private GameObject m_weaponHolder;
 
-    private GameObject m_characterController;
+    private TopDownCharacterController m_characterController;
 
     private void Start()
     {
         m_weaponHolder = GameObject.Find("WeaponsHolder");
-        m_characterController = GameObject.Find("character");
+        m_characterController = GameObject.Find("character").GetComponent<TopDownCharacterController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +26,8 @@ public class WeaponPickUp : MonoBehaviour
                 Destroy(child.gameObject);
             }
             Instantiate(m_weaponPrefab, m_weaponHolder.transform);
-            m_characterController.SendMessage("PickUpWeapon");
+            m_characterController.weaponSystem = m_weaponHolder.GetComponentInChildren<WeaponSystem>();
+            gameObject.SetActive(false);
         }
     }
 }
