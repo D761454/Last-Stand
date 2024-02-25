@@ -25,7 +25,6 @@ public class WaveSystem : MonoBehaviour
         // increment wave and calculate total enemies for wave
         wave++;
         m_zToSpawn = (wave * 2) + 5;
-        m_flash.End();
         m_NWCR = false;
 
         if (wave % 5 == 0)
