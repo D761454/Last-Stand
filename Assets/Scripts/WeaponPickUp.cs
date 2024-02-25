@@ -26,6 +26,7 @@ public class WeaponPickUp : MonoBehaviour
             m_weaponPrefab.SetActive(true);
 
             m_characterController.weaponSystem = m_weaponHolder.GetComponentInChildren<WeaponSystem>();
+            m_characterController.weaponSystem.ResetAmmo();
             gameObject.SetActive(false);
         }
     }

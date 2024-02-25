@@ -54,6 +54,11 @@ public class WeaponSystem : MonoBehaviour
         m_lastShot = Time.time;
     }
 
+    public void ResetAmmo()
+    {
+        m_ammo = m_maxAmmo;
+    }
+
     /// <summary>
     /// Handles Bullet Instantiation, propulsion and ammo removal
     /// </summary>

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 6120569653371869877, guid: 756439c8b7dc5284dbd6bdb5107cbe09, type: 3}
   m_firePoint: {fileID: 0}
   m_fireTimer: 0.7
-  m_reloadTimer: 1
+  m_reloadTimer: 1.5
   m_reloading: 0
   m_ammo: 0
   m_maxAmmo: 4
