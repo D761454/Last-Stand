@@ -13,7 +13,8 @@ public class WaveSystem : MonoBehaviour
 
     private void Start()
     {
-            m_reset = gameObject.GetComponent<PickUpResetter>();
+        m_reset = gameObject.GetComponent<PickUpResetter>();
+        m_flash = gameObject.GetComponent<FlashEffect>();
     }
 
     public IEnumerator NextWave()
