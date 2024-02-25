@@ -220,12 +220,14 @@ public class TopDownCharacterController : MonoBehaviour
         }
     }
 
-    public void Heal()
+    public bool Heal()
     {
         if (m_health < m_maxHealth)
         {
             m_health++;
             Instantiate(m_heartPrefab, m_heartPanel.transform);
+            return true;
         }
+        return false;
     }
 }

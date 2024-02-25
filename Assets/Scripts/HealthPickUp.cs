@@ -16,8 +16,10 @@ public class HealthPickUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            m_characterController.Heal();
-            gameObject.SetActive(false);
+            if (m_characterController.Heal())
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
