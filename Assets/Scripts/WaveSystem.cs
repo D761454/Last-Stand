@@ -9,6 +9,7 @@ public class WaveSystem : MonoBehaviour
     public bool m_NWCR = false;
 
     private PickUpResetter m_reset;
+    private FlashEffect m_flash;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class WaveSystem : MonoBehaviour
         // increment wave and calculate total enemies for wave
         wave++;
         m_zToSpawn = (wave * 2) + 5;
+        m_flash.Flash();
         m_NWCR = false;
 
         if (wave % 5 == 0)
