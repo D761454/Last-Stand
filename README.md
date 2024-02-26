@@ -1,1 +1,1 @@
-C#ForEngines
+Note: A Unity 2022.3.4f1 Bug may cause the settings menu or other ui to have their y offset reset on build, this however should not occur as i have set pivots to left side or right side where it should not occur. Equally, on build and zipping of project files and the build, this bug is not occurring.
